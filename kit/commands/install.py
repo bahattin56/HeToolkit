@@ -4,6 +4,7 @@
 """This module fetches, builds, or installs the requested libraries"""
 
 from typing import Dict
+from utils.config import config_required
 from utils.component_builder import (  # pylint: disable=no-name-in-module
     components_to_build_from,
     chain_run,
@@ -29,6 +30,7 @@ def _stages(upto_stage: str):
     return the_stages
 
 
+@config_required
 def install_components(args):
     """Install command"""
     the_stages = _stages(args.upto_stage)

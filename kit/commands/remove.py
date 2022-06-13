@@ -5,12 +5,14 @@
 
 from shutil import rmtree
 from os import listdir
+from utils.config import config_required
 from utils.tab_completion import (  # pylint: disable=no-name-in-module
     components_completer,
     instances_completer,
 )
 
 
+@config_required
 def remove_components(args):
     """Remove component instances"""
     try:

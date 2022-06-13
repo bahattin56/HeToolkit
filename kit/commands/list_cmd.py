@@ -9,6 +9,7 @@ from itertools import chain
 from typing import Dict, List
 
 from toml import load
+from utils.config import config_required
 
 # Number of separation spaces for columns
 _SEP_SPACES = 2
@@ -64,6 +65,7 @@ def list_dirs(path: str) -> List[str]:
         return []
 
 
+@config_required
 def list_components(args):
     """List to stdout info on components."""
     repo_location = Path(args.config.repo_location)
